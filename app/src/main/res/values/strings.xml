@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyMoney</string>
+    <string name="tambah_transaksi">TAMBAH TRANSAKSI</string>
+    <string name="kategori">Kategori:</string>
+    <string name="nominal">Nominal:</string>
+    <string name="jenis_transaksi">Jenis Transaksi:</string>
+    <string name="pemasukan">Pemasukan</string>
+    <string name="pengeluaran">Pengeluaran</string>
+    <string name="tanggal">Tanggal:</string>
+    <string-array name="array_kategori">
+        <item>Makanan</item>
+        <item>Pakaian</item>
+        <item>Pendidikan</item>
+        <item>Transportasi</item>
+    </string-array>
+</resources>
