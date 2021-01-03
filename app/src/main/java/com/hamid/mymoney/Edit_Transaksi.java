@@ -119,7 +119,7 @@ public class Edit_Transaksi extends AppCompatActivity {
                         snapshot.getRef().child("nominal").setValue(editNominal.getText().toString());
                         snapshot.getRef().child("tanggal").setValue(tvDateResult.getText().toString());
 
-                        Intent pemasukan = new Intent(Edit_Transaksi.this, PemasukanActivity.class);
+                        Intent pemasukan = new Intent(Edit_Transaksi.this, MainActivity.class);
                         startActivity(pemasukan);
                         finish();
                     }
@@ -135,7 +135,7 @@ public class Edit_Transaksi extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Intent a = new Intent(Edit_Transaksi.this, PemasukanActivity.class);
+                            Intent a = new Intent(Edit_Transaksi.this, MainActivity.class);
                             startActivity(a);
                         }else{
                             Toast.makeText(getApplicationContext(), "Fail delete!", Toast.LENGTH_SHORT).show();

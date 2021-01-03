@@ -11,4 +11,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="blue">#ff0099cc</color>
+    <color name="header">#F8E8A3</color>
+    <color name="palet1">#702F34</color>
+    <color name="palet1light">#80363B</color>
+    <color name="palet1dark">#632A2F</color>
+    <color name="palet2">#E07761</color>
 </resources>

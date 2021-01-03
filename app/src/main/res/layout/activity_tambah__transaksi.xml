@@ -1,122 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/bgpallete2"
     tools:context=".Tambah_Transaksi">
 
-    <TextView
-        android:id="@+id/teks_judul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/tambah_transaksi"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:textSize="17sp" />
     <LinearLayout
-        android:id="@+id/layout_kategori"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/teks_judul"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kategori"
-            android:textSize="15sp" />
-        <Spinner
-            android:id="@+id/dropdown_kategori"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/array_kategori"
-            android:layout_marginStart="20dp"/>
+        android:layout_height="150dp"
+        android:background="@drawable/bgpallete1"
+        android:orientation="vertical">
 
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layout_nominal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/layout_kategori"
-        android:layout_marginTop="20dp">
         <TextView
+            android:id="@+id/teks_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/header"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/tambah_transaksi"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp" />
+    </LinearLayout>
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nominal"
-            android:textSize="15sp" />
-        <EditText
-            android:id="@+id/edtTxt_nominal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp" />
-    </LinearLayout>
     <LinearLayout
-        android:id="@+id/layout_jenis"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/layout_nominal"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jenis_transaksi"
-            android:textSize="15sp" />
+        android:layout_height="match_parent"
+        android:background="@drawable/bgform"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        android:padding="30dp">
+
         <LinearLayout
+            android:id="@+id/layout_kategori"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <CheckBox
-                android:id="@+id/tambah_pemasukan"
+            android:orientation="horizontal"
+            android:layout_below="@id/teks_judul">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/pemasukan"/>
-            <CheckBox
-                android:id="@+id/tambah_pengeluaran"
-                android:layout_width="wrap_content"
+                android:text="@string/kategori"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <Spinner
+                android:id="@+id/dropdown_kategori"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pengeluaran"/>
+                android:entries="@array/array_kategori"
+                android:layout_marginStart="20dp"/>
+
         </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layout_tanggal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/layout_jenis"
-        android:layout_marginTop="20dp">
-        <TextView
-
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/layout_nominal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tanggal"
-            android:textSize="15sp" />
-        <ImageView
-            android:id="@+id/btn_datepicker"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/layout_kategori"
+            android:layout_marginTop="20dp">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nominal"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/edtTxt_nominal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_jenis"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ic_baseline_date_range_24" />
-        <TextView
-            android:id="@+id/tgl_dipilih"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/layout_nominal"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/jenis_transaksi"
+                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <CheckBox
+                    android:id="@+id/tambah_pemasukan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pemasukan"/>
+                <CheckBox
+                    android:id="@+id/tambah_pengeluaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pengeluaran"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_tanggal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp" />
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:layout_below="@id/layout_jenis"
+            android:layout_marginTop="20dp">
+            <TextView
 
-    <Button
-        android:id="@+id/input_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_tanggal"
-        android:layout_marginTop="59dp"
-        android:text="Button" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tanggal"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <ImageView
+                android:id="@+id/btn_datepicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_baseline_date_range_24" />
+            <TextView
+                android:id="@+id/tgl_dipilih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+</LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>

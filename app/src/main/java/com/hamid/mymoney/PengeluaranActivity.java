@@ -9,10 +9,13 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -26,61 +29,41 @@ import java.util.ArrayList;
 public class PengeluaranActivity extends AppCompatActivity {
 
     TextView jenis, kategori, nominal, tanggal;
-    ListView listTransaksi;
-    ArrayList<String> arrayList = new ArrayList<>();
-    ArrayAdapter<String> arrayAdapter;
+    RecyclerView transaksi;
+    ArrayList<Transaksi> listTransaksi;
+    ListTransaksiAdapter transaksiAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pengeluaran2);
 
-//        jenis = findViewById(R.id.pengeluaran_jenis);
-//        kategori = findViewById(R.id.pengeluaran_kategori);
-//        nominal = findViewById(R.id.pengeluaran_nominal);
-//        tanggal = findViewById(R.id.pengeluaran_tanggal);
+        transaksi = findViewById(R.id.list_pengeluaran);
+        transaksi.setLayoutManager(new LinearLayoutManager(this));
+        listTransaksi = new ArrayList<Transaksi>();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("transaksi");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("transaksi");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pengeluaran = "Pengeluaran";
 
-        listTransaksi = findViewById(R.id.list_pengeluaran);
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
-        listTransaksi.setAdapter(arrayAdapter);
-//        reference.addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//                String jenis = snapshot.child("jenis").getValue(String.class);
-//                String pengeluaran = "Pengeluaran";
-//
-//                if(jenis.equals(pengeluaran)){
-//                    Transaksi newTransaksi = snapshot.getValue(Transaksi.class);
-////                    arrayList.add(newTransaksi.getList());
-//                    arrayAdapter.notifyDataSetChanged();
-////                    Log.i("MyReports", snapshot.getValue().toString());
-//                }
-////                Log.d("Jenis", jenis);
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+                for(DataSnapshot dataSnapshot1: snapshot.getChildren()){
+                    Transaksi p = dataSnapshot1.getValue(Transaksi.class);
+                    if(p.getJenis().equals(pengeluaran)){
+                        listTransaksi.add(p);
+                    }
+                }
+                transaksiAdapter = new ListTransaksiAdapter(PengeluaranActivity.this, listTransaksi);
+                transaksi.setAdapter(transaksiAdapter);
+                transaksiAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

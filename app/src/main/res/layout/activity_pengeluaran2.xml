@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PengeluaranActivity">
+    tools:context=".PemasukanActivity"
+    android:background="@drawable/bgpallete2"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/pengeluaran_jenis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pengeluaran"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/bgpallete1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/pengeluaran_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/header"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="PENGELUARAN"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp" />
+    </LinearLayout>
 
-    <ListView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_pengeluaran"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListTransaksi"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pengeluaran_jenis" />
+        android:layout_marginTop="-50dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="ListTransaksi">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

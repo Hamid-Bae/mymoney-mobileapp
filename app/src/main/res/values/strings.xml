@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyMoney</string>
+    <string name="app_name">My Money</string>
     <string name="tambah_transaksi">TAMBAH TRANSAKSI</string>
     <string name="kategori">Kategori:</string>
     <string name="nominal">Nominal:</string>

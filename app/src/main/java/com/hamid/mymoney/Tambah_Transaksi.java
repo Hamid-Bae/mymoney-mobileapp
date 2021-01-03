@@ -32,7 +32,6 @@ public class Tambah_Transaksi extends AppCompatActivity {
     //variable
     CheckBox pemasukan, pengeluaran;
     EditText inputNominal;
-    Button tambahTransaksi;
     Spinner inputKategori;
 
     FirebaseDatabase rootNode;
@@ -52,7 +51,6 @@ public class Tambah_Transaksi extends AppCompatActivity {
         inputNominal = findViewById(R.id.edtTxt_nominal);
         pemasukan = findViewById(R.id.tambah_pemasukan);
         pengeluaran = findViewById(R.id.tambah_pengeluaran);
-        tambahTransaksi = findViewById(R.id.input_data);
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
 
