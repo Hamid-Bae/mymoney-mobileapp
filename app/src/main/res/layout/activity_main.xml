@@ -62,13 +62,16 @@
             android:orientation="vertical">
 
 
-            <ListView
-                android:id="@+id/list_transaksi"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_viewmain"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawSelectorOnTop="true"
-                android:layout_margin="7dp"
-                tools:listitem="@layout/row_data"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="ListTransaksi"
+                tools:listitem="@layout/row_data"
+                app:layout_constraintTop_toBottomOf="@+id/view_main_txt">
+
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>
 
