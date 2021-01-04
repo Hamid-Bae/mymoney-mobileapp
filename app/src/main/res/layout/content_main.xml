@@ -2,8 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="100dp"
     android:orientation="horizontal"
+    android:background="@drawable/bgform"
     android:layout_margin="5dp">
 
     <LinearLayout
@@ -21,11 +22,11 @@
             android:id="@+id/listTanggalTransaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
             android:text="10-10-2020"
             android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="20dp"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,6 +40,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jenis Transaksi"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/listKategoriTransaksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nominal Transaksi"
             android:textSize="15sp"
             android:layout_marginTop="10dp"/>
 

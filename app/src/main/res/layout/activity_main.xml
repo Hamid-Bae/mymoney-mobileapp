@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:paddingBottom="20dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -20,34 +19,81 @@
             android:layout_marginTop="20dp"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/txtview_pemasukan"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="Pemasukan"
-                android:textSize="15sp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/background"/>
 
-            <TextView
-                android:id="@+id/txtview_pengeluaran"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center_horizontal"
-                android:text="Pengeluaran"
-                android:textSize="15sp"
-                android:background="@drawable/background_red"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtview_pemasukan"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pemasukan"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/background"/>
+                <TextView
+                    android:id="@+id/txtview_pemasukan_nominal"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:text="100000"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:background="@drawable/background_bawah"/>
 
-            <TextView
-                android:id="@+id/txtview_saldo"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/background_yellow"
-                android:gravity="center_horizontal"
-                android:text="Saldo"
-                android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtview_pengeluaran"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="Pengeluaran"
+                    android:textSize="15sp"
+                    android:background="@drawable/background_red"/>
+                <TextView
+                    android:id="@+id/txtview_pengeluaran_nominal"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="100000"
+                    android:textSize="15sp"
+                    android:background="@drawable/background_red_bawah"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtview_saldo"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/background_yellow"
+                    android:gravity="center_horizontal"
+                    android:text="Saldo"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtview_saldo_nominal"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/background_yellow_bawah"
+                    android:gravity="center"
+                    android:text="100000"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </Toolbar>
@@ -68,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="ListTransaksi"
-                tools:listitem="@layout/row_data"
+                tools:listitem="@layout/content_main"
                 app:layout_constraintTop_toBottomOf="@+id/view_main_txt">
 
             </androidx.recyclerview.widget.RecyclerView>

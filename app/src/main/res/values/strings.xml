@@ -12,5 +12,7 @@
         <item>Pakaian</item>
         <item>Pendidikan</item>
         <item>Transportasi</item>
+        <item>Gaji</item>
+        <item>Hadiah</item>
     </string-array>
 </resources>

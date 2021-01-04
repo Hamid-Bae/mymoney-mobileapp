@@ -31,6 +31,7 @@ public class ListViewMain extends RecyclerView.Adapter<ListViewMain.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
         holder.tanggaltransaksi.setText(transaksi.get(i).getTanggal());
         holder.jenistransaksi.setText(transaksi.get(i).getJenis());
+        holder.kategoritransaksi.setText(transaksi.get(i).getKategori());
         holder.nominaltransaksi.setText(transaksi.get(i).getNominal());
 
         final String getJenisTransaksi = transaksi.get(i).getJenis();
@@ -61,13 +62,14 @@ public class ListViewMain extends RecyclerView.Adapter<ListViewMain.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tanggaltransaksi, jenistransaksi, nominaltransaksi;
+        TextView tanggaltransaksi, jenistransaksi, kategoritransaksi, nominaltransaksi;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tanggaltransaksi = (TextView) itemView.findViewById(R.id.listTanggalTransaksi);
             jenistransaksi = (TextView) itemView.findViewById(R.id.listJenisTransaksi);
+            kategoritransaksi = (TextView) itemView.findViewById(R.id.listKategoriTransaksi);
             nominaltransaksi = (TextView) itemView.findViewById(R.id.listNominalTransaksi);
         }
     }
