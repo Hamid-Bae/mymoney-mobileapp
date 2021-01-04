@@ -85,4 +85,11 @@ public class PengeluaranActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(PengeluaranActivity.this, MainActivity.class);
+        startActivity(back);
+        finish();
+    }
 }

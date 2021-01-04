@@ -174,4 +174,9 @@ public class Edit_Transaksi extends AppCompatActivity {
 
         datePickerDialog.show();
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

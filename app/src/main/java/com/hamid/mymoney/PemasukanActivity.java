@@ -85,4 +85,11 @@ public class PemasukanActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(PemasukanActivity.this, MainActivity.class);
+        startActivity(back);
+        finish();
+    }
 }

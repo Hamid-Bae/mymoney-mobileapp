@@ -128,4 +128,11 @@ public class Tambah_Transaksi extends AppCompatActivity {
 
         datePickerDialog.show();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(Tambah_Transaksi.this, MainActivity.class);
+        startActivity(back);
+        finish();
+    }
 }
